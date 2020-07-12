@@ -254,7 +254,7 @@ class ResNetTF(nn.Module):
         # self.fc = nn.Linear(512 * block.expansion, num_classes)
 
         chinter = 512 * block.expansion
-
+        #The layers below generate logits for each transformation
         if 'rotation' in tftypes:
             print('APPEND ROTATION')
             self.rotation = nn.Conv2d(chinter, self.num_cls[0], 1, 1)
